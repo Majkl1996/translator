@@ -1,0 +1,98 @@
+body {
+  background-color: rgba(59,60,85,0.76);
+  padding: 0;
+}
+
+nav {
+  width: 100%;
+  overflow: auto;
+}
+
+nav ul  {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #999;
+}
+
+nav li {
+   float: left;
+}
+
+.log-out {
+  float: right;
+  margin-right: 5%;
+}
+
+.logged {
+  float: right;
+  margin-right: 20px;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #111;
+}
+
+form .helptext {
+  font-size: 0.7em;
+  font-style: italic;
+}
+
+.errorlist {
+  color: #f00;
+}
+
+.input-text {
+  border: solid green;
+  height: 800px;
+  width: 42%;
+  float: left;
+  overflow-y: scroll;
+  padding: 10px;
+  margin-left: 4%;
+}
+
+.output-text {
+  border: solid green;
+  height: 800px;
+  width: 40%;
+  float: right;
+  overflow-y: scroll;
+  padding: 10px;
+  margin-right: 4%;
+}
+
+.main-block {
+  padding: 1%;
+  width: 90%;
+  min-height: 100vh;
+  overflow-y: auto;
+  background-color: yellow;
+  margin-left: 4%;
+}
+
+p.alert {
+  padding: 2px;
+  background-color: red;
+  border-radius: 45px;
+  border: green solid;
+  width: 20%;
+  text-align: center;
+}
+
+.nl-pl {
+  alignment: center;
+}
+
+.nl-pl:hover {
+  background-color: #111;
+}
