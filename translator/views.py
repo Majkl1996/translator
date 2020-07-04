@@ -12,6 +12,10 @@ from googletrans import Translator
 # from .models import Product, Category
 from .forms import LoginForm, UserLoginForm, TranslateForm
 
+class AjaxView(View):
+    def get(self, request):
+        # form = TranslateForm()
+        return render(request, "ajax.html")
 
 class HomeView(View, LoginRequiredMixin):
     def get(self, request):
@@ -20,17 +24,28 @@ class HomeView(View, LoginRequiredMixin):
 class TranslateView(View):
     def get(self, request):
         # form = TranslateForm()
+        # text = self.request.POST['textValue']
+        # translator = Translator()
+        # transl_result = translator.translate(text, dest='pl', src='nl')
+        text = request.POST.get('value')
+        print(text)
         return render(request, "translate.html")
 
     def post(self, request):
-        text = self.request.POST['getInputText']
+        # text = self.request.POST['value']
+        # print(text)
         # form = TranslateForm(request.POST)
         # if form.is_valid():
         #     text = form.cleaned_data.get('input_text')
-        translator = Translator()
-        transl_result = translator.translate(text, dest='pl', src='nl')
+        # translator = Translator()
+        # transl_result = translator.translate(text, dest='pl', src='nl')
         #     form.add_error(None, transl_result.text)
         # transl_result
+        text = request.POST.get('value')
+        print(text)
+        # text = self.request.POST['textValue']
+        # translator = Translator()
+        #  transl_result = translator.translate(text, dest='pl', src='nl')
         return render(request, "translate.html")
 
 

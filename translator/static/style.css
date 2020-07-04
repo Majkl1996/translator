@@ -3,6 +3,10 @@ body {
   padding: 0;
 }
 
+.hide-me {
+  width: 300px;
+}
+
 nav {
   width: 100%;
   overflow: auto;
@@ -95,4 +99,8 @@ p.alert {
 
 .nl-pl:hover {
   background-color: #111;
+}
+
+.hide-me {
+  visibility: hidden;
 }

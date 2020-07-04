@@ -18,6 +18,7 @@ from django.urls import path
 from translator import views as transl
 
 urlpatterns = [
+    path('ajax/', transl.AjaxView.as_view(), name="ajax"),
     path('admin/', admin.site.urls),
     path('login/', transl.UserLoginView.as_view(), name="login"),
     path('home/', transl.HomeView.as_view(), name="home"),
