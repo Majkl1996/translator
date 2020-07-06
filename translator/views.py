@@ -45,8 +45,8 @@ class TranslateView(View):
         # text = self.request.POST['textValue']
         # translator = Translator()
         # transl_result = translator.translate(text, dest='pl', src='nl')
-        text = request.POST.get('value')
-        print(text)
+        # text = request.GET.get('value')
+        # print(text)
         return render(request, "translate.html")
 
     def post(self, request):
@@ -59,13 +59,23 @@ class TranslateView(View):
         # transl_result = translator.translate(text, dest='pl', src='nl')
         #     form.add_error(None, transl_result.text)
         # transl_result
-        text = request.POST.get('value')
-        print(text)
+        # text = request.POST.get('value')
+        # print(text)
         # text = self.request.POST['textValue']
         # translator = Translator()
         #  transl_result = translator.translate(text, dest='pl', src='nl')
         return render(request, "translate.html")
 
+class TranslationView(View):
+    def get(self, request):
+        # form = TranslateForm()
+        # text = self.request.POST['textValue']
+        # translator = Translator()
+        # transl_result = translator.translate(text, dest='pl', src='nl')
+        text = request.GET.get('value')
+
+        print(text)
+        return HttpResponse(text)
 
 class DictionaryView(View):
     def get(self, request):

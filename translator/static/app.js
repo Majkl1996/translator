@@ -4,15 +4,17 @@ $(function () {
         console.log(inputText)
 
         $.ajax({
-            type: 'POST',
-            url: '127.0.0.1:8000/translate',
+            type: 'GET',
+            url: '/translation/',
             data: {
                 value: inputText
             }
-        })
+        }).done(function(data) {
+          $('.output-text').val(data);
+        });
 
-        $('.output-text').val(getInputText.val());
-        return getInputText;
+        //$('.output-text').val(getInputText.val());
+        //return getInputText;
     })
 
 })

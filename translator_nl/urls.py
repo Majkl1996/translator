@@ -24,6 +24,7 @@ urlpatterns = [
     path('register/', transl.registerPage, name="register"),
     path('home/', transl.HomeView.as_view(), name="home"),
     path('translate/', transl.TranslateView.as_view(), name="translate"),
+    path('translation/', transl.TranslationView.as_view(), name="translation"),
     path('dictionary/', transl.DictionaryView.as_view(), name="dictionary"),
     path('upload/', transl.UploadView.as_view(), name="upload"),
 ]
