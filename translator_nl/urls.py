@@ -21,6 +21,7 @@ urlpatterns = [
     path('ajax/', transl.AjaxView.as_view(), name="ajax"),
     path('admin/', admin.site.urls),
     path('login/', transl.UserLoginView.as_view(), name="login"),
+    path('register/', transl.registerPage, name="register"),
     path('home/', transl.HomeView.as_view(), name="home"),
     path('translate/', transl.TranslateView.as_view(), name="translate"),
     path('dictionary/', transl.DictionaryView.as_view(), name="dictionary"),

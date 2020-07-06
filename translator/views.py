@@ -8,9 +8,27 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from googletrans import Translator
 
+from django.forms import inlineformset_factory
+from django.contrib.auth.forms import UserCreationForm
+
+from django.contrib.auth import authenticate, login, logout
+
+from django.contrib import messages
+
 
 # from .models import Product, Category
 from .forms import LoginForm, UserLoginForm, TranslateForm
+
+def registerPage(request):
+    form = UserCreationForm()
+
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context = {'form':form}
+    return render(request, 'register.html', context)
 
 class AjaxView(View):
     def get(self, request):
@@ -82,6 +100,14 @@ class UserLoginView(View):
                 form.add_error(None, "Nieprawidłowy login lub hasło")
         return render(request, "user_login.html", {'form': form})
 
+class UserRegisterView(View):
+    def get(self, request):
+        return render(request, "register.html")
+
+def registerPage(request):
+    form = UserCreationForm()
+    context = {}
+    return render(request, 'register.html', context)
 
 class UserLogoutView(View):
     def get(self, request):

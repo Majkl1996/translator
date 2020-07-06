@@ -1,6 +1,7 @@
 from django import forms
 from django.core.validators import EmailValidator, URLValidator, validate_email, MinValueValidator, MaxValueValidator
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 # from .models import SCHOOL_CLASS, GRADES, PIZZA_SIZES, Student, SchoolSubject, Toppings, Message, StudentNotice
 import datetime
 # from .validators import validate_static_range, validate_female_name
